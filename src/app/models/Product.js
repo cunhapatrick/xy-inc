@@ -10,8 +10,12 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  qtd: {
+  price: {
     type: Number,
+    required: true
+  },
+  category: {
+    type: String,
     required: true
   },
   created_at: {

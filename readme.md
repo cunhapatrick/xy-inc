@@ -1,15 +1,41 @@
-# BoilerPlate Javascript API Nodejs
+# Zup Test
 
 ## Description
 
-Simple API REST nodejs server with authentication system and CRUD to server a product entity
+Simple API REST nodejs server with authentication system and CRUD to server a product entity using noSql MongoDB
+
+## Principal Tecnologies
+
+- Javascript
+- Nodejs with Express
+- noSql Mongo database
+- Mongoose ODM (Object Document Mapper)
+- Jest
+- JWT (Json Web Token)
+
+## Resume Description of the tecnologies
+
+### Javascript
+As the core language of the project, necessary to build the nodejs server
+
+### Express
+Web application framework to administrate middlewares, routes and exceptions of the nodeJS server
+
+### MongoDB
+Non Sequel Database used to store the data of the application
+
+### Jest
+Javascript Testing Framework used to run and validate the tests of the project
+
+### JWT
+Open stardard way to hash information, used on the authentication of the application
 
 ## [Repository URL](https://cunhapatrick.github.io/xy-inc)
 
 ## Initial env Settings
 
 run `yarn` to install all dependencies
-run `yarn appSecretGenerate keyword` , copy the hash inside .env variable APP_SECRET
+run `yarn appSecretGenerate keyword`, copy the hash inside .env variable APP_SECRET
 
 ## Database Configuration (MongoDB)
 
@@ -43,14 +69,18 @@ run `yarn appSecretGenerate keyword` , copy the hash inside .env variable APP_SE
 - Follow those [instruction](https://hub.docker.com/_/redis/)
 - Set the credentials to .env file
 
-2. [Redis Server](https://redis.io/download)
+2. [Redis Server](https://redis.io/download) (optional)
 
 - Download and configure redis to your local machine
 - Set the .env file with the credentials (Obs: The .env.example already have the default credentials)
 
+Obs: The redis server is not used on the mvp, it's optional
+
 ## Exception Error Config
 
 To production error monitoring, I used (Sentry)[https://sentry.io], create a account and create a project, after that get the credentials data and put inside .env respective variables
+
+Obs: Another optional feature
 
 ## Init Server
 
@@ -73,3 +103,7 @@ To access the next endpoints, it's necessary to create a session and put the gen
 - Get one Product by id `/products/:id` and GET method
 
 Obs: The List endpoint have a paginate system that work passing page and limit as query parameter on the URL like `/products?page=2&limit=10`, if any parameter is passed the endpoint works with the default values `{ page: 1, limit: 10 }`
+
+## Test routine
+
+- run `yarn test` to execute the test routine of the functions
